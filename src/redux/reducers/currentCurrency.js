@@ -1,6 +1,7 @@
 const initialState = {
-  items: [],
+  // items: [],
   loadingItems: false,
+  currency: [],
 };
 
 export const currentCurrency = (state = initialState, action) => {
@@ -13,8 +14,9 @@ export const currentCurrency = (state = initialState, action) => {
     case 'loading/currency/success':
       return {
         ...state,
-        items: [...state.items, action.payload],
+        // items: [...state.items, action.payload],
         loadingItems: false,
+        currency: Object.values(action.payload.Valute),
       };
 
     default:

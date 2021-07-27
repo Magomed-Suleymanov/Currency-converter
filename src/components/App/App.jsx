@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
   app: {
     position: 'absolute',
     left: 'calc(50% - 400px)',
-    top: '10%',
     margin: 'auto',
     border: '1px solid whitesmoke',
     borderRadius: '3px',
@@ -20,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '0px 0px 6px 1px rgb(200, 200, 200)',
     width: '800px',
     fontFamily: 'Roboto, sans-serif',
+    listStyle: 'none',
   },
 }));
 
@@ -33,9 +33,7 @@ function App() {
 
   return (
     <Box className={classes.app}>
-      <Box>
-        <Header />
-      </Box>
+      <Header />
       <Switch>
         <Route exact path="/" component={CurrentCurrency} />
         <Route path="/Conversion" component={Conversion} />

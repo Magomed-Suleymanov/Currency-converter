@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '0px 0px 4px 2px rgb(200, 200, 200)',
   },
 }));
-
 function Header() {
   const [value, setValue] = React.useState(0);
   const classes = useStyles();
@@ -28,13 +27,13 @@ function Header() {
         }}
       >
         <BottomNavigationAction
-          label="Current Currenсy"
+          label="Текущий курс"
           icon={<AttachMoneyIcon />}
           component={NavLink}
           to="/"
         />
         <BottomNavigationAction
-          label="Conversion"
+          label="Конвертирование"
           icon={<MoneyIcon />}
           component={NavLink}
           to="/Conversion"

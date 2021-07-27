@@ -1,6 +1,5 @@
 import { createLogger } from 'redux-logger/src';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { conversion } from './reducers/conversion';
 import { currentCurrency } from './reducers/currentCurrency';
 import thunk from 'redux-thunk';
 
@@ -10,6 +9,6 @@ const logger = createLogger({
 });
 
 export const store = createStore(
-  combineReducers({ conversion, currentCurrency }),
+  combineReducers({ currentCurrency }),
   applyMiddleware(thunk, logger),
 );
