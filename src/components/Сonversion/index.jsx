@@ -49,8 +49,6 @@ function Conversion() {
   const [sum, setSum] = useState('');
   const [amount, setAmount] = useState('');
 
-
-
   const handleValueBase = (e) => {
     setValueInputBase(e.target.value);
   };
