@@ -41,17 +41,15 @@ function CurrentCurrency() {
 
   const classes = useStyles();
 
-  console.log(currency);
-
   return (
     <Box>
-      <Box paddingTop="10px">
+      <Box paddingTop='10px'>
         <Box className={classes.headList}>
-          <Box fontSize="20px" paddingLeft="10px">
+          <Box fontSize='20px' paddingLeft='10px'>
             Валюта
           </Box>
-          <Box fontSize="20px">Курс</Box>
-          <Box fontSize="20px" width="280px" textAlign="center">
+          <Box fontSize='20px'>Курс</Box>
+          <Box fontSize='20px' width='280px' textAlign='center'>
             Страна
           </Box>
         </Box>
@@ -61,13 +59,12 @@ function CurrentCurrency() {
           currency.map((item, id) => {
             return (
               <Box key={id}>
-                <Box className={classes.headList}></Box>
                 <Box className={classes.itemListCurrency}>
                   <Box className={classes.charCode}>{item.CharCode}</Box>
                   <Box
                     color={item.Value > item.Previous ? 'green' : 'red'}
-                    textAlign="center"
-                    width="100px"
+                    textAlign='center'
+                    width='100px'
                   >
                     {item.Value.toFixed(2)}
                   </Box>

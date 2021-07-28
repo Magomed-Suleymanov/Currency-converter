@@ -8,8 +8,8 @@ function SkeletonLoader() {
     <Box>
       {skeleton.map((item, id) => {
         return (
-          <Box marginBottom="3px" key={id}>
-            <Skeleton width="100%" height="35px" />
+          <Box marginBottom='3px' key={id}>
+            <Skeleton width='100%' height='35px' />
           </Box>
         );
       })}

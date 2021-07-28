@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
