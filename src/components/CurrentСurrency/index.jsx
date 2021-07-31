@@ -3,12 +3,14 @@ import Box from '@material-ui/core/Box';
 import { useSelector } from 'react-redux';
 import SkeletonLoader from './SkeletonLoader';
 import { makeStyles } from '@material-ui/core';
+import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const useStyles = makeStyles((theme) => ({
   itemListCurrency: {
+    minHeight: '30px',
     display: 'flex',
     justifyContent: 'space-between',
-    minHeight: '30px',
     borderBottom: '1px solid rgb(200, 200, 200)',
     padding: '5px 10px',
     alignItems: 'center',
@@ -26,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'rgb(0,44,137)',
   },
   headList: {
+    fontSize: '20px',
     display: 'flex',
     justifyContent: 'space-between',
     borderBottom: '0px solid rgb(200, 200, 200)',
@@ -43,13 +46,11 @@ function CurrentCurrency() {
 
   return (
     <Box>
-      <Box paddingTop='10px'>
+      <Box>
         <Box className={classes.headList}>
-          <Box fontSize='20px' paddingLeft='10px'>
-            Валюта
-          </Box>
-          <Box fontSize='20px'>Курс</Box>
-          <Box fontSize='20px' width='280px' textAlign='center'>
+          <Box paddingLeft="10px">Валюта</Box>
+          <Box>Курс</Box>
+          <Box width="290px" textAlign="center">
             Страна
           </Box>
         </Box>
@@ -60,13 +61,24 @@ function CurrentCurrency() {
             return (
               <Box key={id}>
                 <Box className={classes.itemListCurrency}>
-                  <Box className={classes.charCode}>{item.CharCode}</Box>
+                  <Box width="40px" className={classes.charCode}>
+                    {item.CharCode}
+                  </Box>
                   <Box
                     color={item.Value > item.Previous ? 'green' : 'red'}
-                    textAlign='center'
-                    width='100px'
+                    textAlign="center"
+                    width="80px"
+                    display="flex"
+                    alignItems="center"
                   >
-                    {item.Value.toFixed(2)}
+                    <Box display="flex" width="48px">
+                      {item.Value.toFixed(2)}
+                    </Box>
+                    {item?.Value > item.Previous ? (
+                      <ArrowDropUpIcon />
+                    ) : (
+                      <ArrowDropDownIcon />
+                    )}
                   </Box>
                   <Box className={classes.boxName}>{item.Name}</Box>
                 </Box>

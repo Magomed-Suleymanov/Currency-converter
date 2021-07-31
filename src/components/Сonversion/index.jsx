@@ -74,8 +74,8 @@ function Conversion() {
       <Box className={classes.baseValute}>
         <input
           className={classes.input}
-          type='number'
-          placeholder='Базовая валюта'
+          type="number"
+          placeholder="Базовая валюта"
           value={sum}
           onChange={handleChangeSum}
         />
@@ -92,16 +92,16 @@ function Conversion() {
             );
           })}
         </select>
-        <Box width='200px' fontSize='18px'>
-           <span>Валюта равна</span>
-          <Box color='rgb(0,44,137)'>{`${ValueBaseValute.toFixed(2)} ₽`}</Box>
+        <Box width="200px" fontSize="18px">
+          <span>Валюта равна</span>
+          <Box color="rgb(0,44,137)">{`${ValueBaseValute.toFixed(2)} ₽`}</Box>
         </Box>
       </Box>
       <Box className={classes.exchangeCurrency}>
         <input
           className={classes.input}
-          type='number'
-          placeholder='Количество валюты за базовую'
+          type="number"
+          placeholder="Количество валюты за базовую"
           value={parseFloat(amount).toFixed(2)}
           onChange={handleAmount}
         />
@@ -118,7 +118,7 @@ function Conversion() {
             );
           })}
         </select>
-        <Box width='200px' fontSize='18px'>
+        <Box width="200px" fontSize="18px">
           Валюта обмена
         </Box>
       </Box>
